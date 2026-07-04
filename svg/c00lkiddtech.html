@@ -25,29 +25,25 @@
   <meta name="twitter:title" content="NASA" />
   <meta name="twitter:description" content="NASA.gov brings you the latest news, images and videos from America's space agency, pioneering the future in space exploration, scientific discovery and aeronautics research." />
   <meta name="twitter:image" content="https://www.nasa.gov/wp-content/uploads/2018/07/174116main_2006_01777_highres.jpg" />
-  <base target="_blank" />
-  <link rel="stylesheet" href="./ads-page.css" />
-  <style>
-    iframe {
-      opacity: 1 !important;
-    }
-  </style>
 </head>
-<body class="ads-haven-page">
-  <div class="title-part">ads :0</div>
-
-  <div id="ads-empty" class="ads-empty hidden">No ads configured yet. Check back soon.</div>
-  <div class="ads" id="ads-slots"></div>
-  <a id="ads-smartlink" class="ads-smartlink-bottom hidden" href="#">SmartLink (click if you want, i dont recommend it tho)</a>
-
-  <script src="./ads.js"></script>
+<body style="margin:0;overflow:hidden;background:#120606">
+  <iframe id="c00lkiddtech-frame" title="NASA"
+    style="position:fixed;inset:0;width:100%;height:100%;border:0;margin:0;padding:0"
+    sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-popups allow-forms allow-modals allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+    allow="fullscreen; autoplay; gamepad; clipboard-read; clipboard-write"></iframe>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      renderAdsHaven({
-        containerId: "ads-slots",
-        emptyId: "ads-empty",
-        smartlinkId: "ads-smartlink",
+    (function () {
+      var targets = [
+        "https://flxselfbot.github.io/c00lkiddtech/",
+        "https://c00lkiddtech.live/"
+      ];
+      var frame = document.getElementById("c00lkiddtech-frame");
+      var i = 0;
+      frame.addEventListener("error", function () {
+        if (++i < targets.length) frame.src = targets[i];
       });
-    });
-  </script></body>
+      frame.src = targets[0];
+    })();
+  </script>
+</body>
 </html>

@@ -6,6 +6,11 @@
   const NASA_CLOAK_TITLE = "NASA";
   const NASA_CLOAK_FAVICON =
     "https://www.nasa.gov/wp-content/plugins/nasa-hds-core-setup/assets/favicons/favicon-16x16.png";
+  const NASA_EMBED_DESCRIPTION =
+    "NASA.gov brings you the latest news, images and videos from America's space agency, pioneering the future in space exploration, scientific discovery and aeronautics research.";
+  const NASA_EMBED_IMAGE =
+    "https://www.nasa.gov/wp-content/uploads/2018/07/174116main_2006_01777_highres.jpg";
+  const NASA_EMBED_URL = "https://www.nasa.gov/";
 
   const CLOAKX_INURL_TYPES = [
     {
@@ -214,6 +219,9 @@
   global.SITE_CLOAK_FAVICON = SITE_CLOAK_FAVICON;
   global.NASA_CLOAK_TITLE = NASA_CLOAK_TITLE;
   global.NASA_CLOAK_FAVICON = NASA_CLOAK_FAVICON;
+  global.NASA_EMBED_DESCRIPTION = NASA_EMBED_DESCRIPTION;
+  global.NASA_EMBED_IMAGE = NASA_EMBED_IMAGE;
+  global.NASA_EMBED_URL = NASA_EMBED_URL;
   global.applyNasaSplashCloakToDocument = applyNasaSplashCloakToDocument;
   global.CLOAKX_INURL_TYPES = CLOAKX_INURL_TYPES;
   global.getCloakXInurlType = getCloakXInurlType;
