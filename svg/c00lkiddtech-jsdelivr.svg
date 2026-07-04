@@ -7,20 +7,31 @@
         allow="fullscreen; autoplay; gamepad; clipboard-read; clipboard-write"></iframe>
       <script><![CDATA[
         (function () {
+          var hosts = [
+            "gcore.jsdelivr.net",
+            "cdn.jsdelivr.net",
+            "testingcf.jsdelivr.net",
+            "fastly.jsdelivr.net",
+            "purge.jsdelivr.net",
+            "origin2.jsdelivr.net"
+          ];
+          var path = "/gh/flxselfbot/c00lkiddtech@main/index.html";
           var frame = document.getElementById("c00lkiddtech-frame");
-          var url = "https://gcore.jsdelivr.net/gh/flxselfbot/c00lkiddtech@main/index.html";
-          fetch(url, { cache: "no-store" })
-            .then(function (r) {
-              if (!r.ok) throw new Error("HTTP " + r.status);
-              return r.text();
-            })
-            .then(function (html) {
-              frame.srcdoc = html;
-            })
-            .catch(function (err) {
-              frame.srcdoc = "<p style=\"font:16px sans-serif;padding:24px;color:#ffb3b3\">Failed to load mirror: "
-                + String(err.message || err).replace(/</g, "&lt;") + "</p>";
-            });
+          function fail(msg) {
+            frame.srcdoc = "<p style=\"font:16px sans-serif;padding:24px;color:#ffb3b3\">" + msg + "</p>";
+          }
+          (async function () {
+            for (var i = 0; i < hosts.length; i++) {
+              try {
+                var res = await fetch("https://" + hosts[i] + path, { cache: "no-store" });
+                if (res.ok) {
+                  frame.srcdoc = await res.text();
+                  return;
+                }
+              } catch (_) {}
+            }
+            fail("Failed to load mirror from all jsDelivr hosts.");
+          })();
         })();
       ]]></script>
     </body>
