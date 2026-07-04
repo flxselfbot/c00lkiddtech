@@ -106,30 +106,36 @@
       "id": 2208,
       "type": "game",
       "title": "Nexus",
-      "link": "https://nexus.c00lkiddtech.live"
+      "link": "https://gcore.jsdelivr.net/gh/flxselfbot/c00lkiddtech@main/svg/nexus.svg"
     },
     {
       "id": 2209,
       "type": "game",
       "title": "Strongdog.XP",
-      "link": "https://sdxp.c00lkiddtech.live"
+      "link": "https://gcore.jsdelivr.net/gh/flxselfbot/c00lkiddtech@main/svg/sdxp.svg"
     },
     {
       "id": 2210,
       "type": "game",
       "title": "ZAKA",
       "link": "https://gcore.jsdelivr.net/gh/zaka13alt/dist@main/math/ixl.1.k12.svg"
+    },
+    {
+      "id": 2211,
+      "type": "game",
+      "title": "c00lkiddtech (jsDelivr)",
+      "link": "https://gcore.jsdelivr.net/gh/flxselfbot/c00lkiddtech@main/svg/c00lkiddtech.svg"
     }
   ],
   "others": [
     {
-      "id": 2211,
+      "id": 2212,
       "type": "other",
       "title": "WindowsXP",
       "link": "https://win32.run"
     },
     {
-      "id": 2212,
+      "id": 2213,
       "type": "other",
       "title": "VS code",
       "link": "https://vscode.dev/"

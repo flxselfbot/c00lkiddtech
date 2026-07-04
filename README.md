@@ -8,31 +8,29 @@ Games, game links, shows catalog, CloakX settings, and legal pages. Link checker
 
 **https://flxselfbot.github.io/c00lkiddtech/**
 
-Open that URL in a browser — it is the full static site, not just raw files on GitHub.
+## jsDelivr SVG links (recommended)
 
-## jsDelivr (CDN / embed)
+SVG files are served as `image/svg+xml` on jsDelivr (unlike `.html`, which is plain text). Open these directly in a browser — they fullscreen-load the site in an iframe.
 
-Use jsDelivr when you need a CDN URL or iframe embed (serves HTML as plain text if opened directly — use GitHub Pages for browsing):
+| Link | URL |
+|------|-----|
+| **c00lkiddtech** | `https://gcore.jsdelivr.net/gh/flxselfbot/c00lkiddtech@main/svg/c00lkiddtech.svg` |
+| **c00lkiddtech (CDN-only)** | `https://gcore.jsdelivr.net/gh/flxselfbot/c00lkiddtech@main/svg/c00lkiddtech-jsdelivr.svg` |
+| **Nexus** | `https://gcore.jsdelivr.net/gh/flxselfbot/c00lkiddtech@main/svg/nexus.svg` |
+| **Strongdog.XP** | `https://gcore.jsdelivr.net/gh/flxselfbot/c00lkiddtech@main/svg/sdxp.svg` |
+
+Also works on `cdn.jsdelivr.net` — swap the hostname if needed.
+
+Pin with `@main`, a tag, or a commit hash.
+
+## jsDelivr raw files
 
 | Resource | URL |
 |----------|-----|
-| **Site (index)** | `https://cdn.jsdelivr.net/gh/flxselfbot/c00lkiddtech@main/index.html` |
+| **index.html** | `https://cdn.jsdelivr.net/gh/flxselfbot/c00lkiddtech@main/index.html` |
 | **CSS** | `https://cdn.jsdelivr.net/gh/flxselfbot/c00lkiddtech@main/style.css` |
 | **Script** | `https://cdn.jsdelivr.net/gh/flxselfbot/c00lkiddtech@main/script.js` |
 | **Games manifest** | `https://cdn.jsdelivr.net/gh/flxselfbot/c00lkiddtech@main/playables/manifest.json` |
-
-Pin a release with `@main`, `@v1.0.0`, or a commit hash.
-
-### Example embed
-
-```html
-<iframe
-  src="https://cdn.jsdelivr.net/gh/flxselfbot/c00lkiddtech@main/index.html"
-  title="c00lkiddtech"
-  allow="fullscreen; autoplay; gamepad"
-  style="width:100%;height:100vh;border:0"
-></iframe>
-```
 
 ## Local preview
 
