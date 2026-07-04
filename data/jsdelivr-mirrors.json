@@ -1,0 +1,19 @@
+{
+  "default": "gcore.jsdelivr.net",
+  "hosts": [
+    "cdn.jsdelivr.net",
+    "gcore.jsdelivr.net",
+    "origin2.jsdelivr.net",
+    "purge.jsdelivr.net",
+    "testingcf.jsdelivr.net",
+    "fastly.jsdelivr.net"
+  ],
+  "paths": {
+    "siteSvg": "/gh/flxselfbot/c00lkiddtech@main/svg/c00lkiddtech.svg",
+    "siteSvgCdn": "/gh/flxselfbot/c00lkiddtech@main/svg/c00lkiddtech-jsdelivr.svg",
+    "siteHtml": "/gh/flxselfbot/c00lkiddtech@main/svg/c00lkiddtech.html",
+    "nexusSvg": "/gh/flxselfbot/c00lkiddtech@main/svg/nexus.svg",
+    "sdxpSvg": "/gh/flxselfbot/c00lkiddtech@main/svg/sdxp.svg",
+    "index": "/gh/flxselfbot/c00lkiddtech@main/index.html"
+  }
+}
