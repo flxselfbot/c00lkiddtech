@@ -4,9 +4,15 @@ Static mirror of [c00lkiddtech.live](https://c00lkiddtech.live) — **no login, 
 
 Games, game links, shows catalog, CloakX settings, and legal pages. Link checker calls the live API.
 
-## jsDelivr (GitHub CDN)
+## Live site (GitHub Pages)
 
-Browse or embed from GitHub via [jsDelivr](https://www.jsdelivr.com/?docs=gh):
+**https://flxselfbot.github.io/c00lkiddtech/**
+
+Open that URL in a browser — it is the full static site, not just raw files on GitHub.
+
+## jsDelivr (CDN / embed)
+
+Use jsDelivr when you need a CDN URL or iframe embed (serves HTML as plain text if opened directly — use GitHub Pages for browsing):
 
 | Resource | URL |
 |----------|-----|
