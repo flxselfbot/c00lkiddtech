@@ -1,0 +1,111 @@
+{
+  "movies": [
+    {
+      "id": "backrooms",
+      "title": "Backrooms",
+      "year": 2026,
+      "releaseName": "Backrooms.2026.720p.VOSTFR.HDTS.x264-FS",
+      "poster": "/shows/backrooms/poster.jpg?v=2",
+      "screenshots": [
+        "/shows/backrooms/1.jpg",
+        "/shows/backrooms/2.jpg",
+        "/shows/backrooms/3.jpg",
+        "/shows/backrooms/frame9.jpg",
+        "/shows/backrooms/frame2.jpg",
+        "/shows/backrooms/frame7.jpg",
+        "/shows/backrooms/frame4.jpg"
+      ],
+      "video": "",
+      "videoType": "external",
+      "downloadUrl": "",
+      "size": "1.30 GB",
+      "videoFormat": "MKV | 1280×690 | 1 692 kb/s | 24.000 FPS",
+      "audio": "English | MP3 | 112 kb/s",
+      "runtime": "1 h 42 min",
+      "subtitles": "French, English [Selectable]",
+      "quality": "720p HDTS",
+      "synopsis": "Found-footage horror in the endless yellow halls. VOSTFR release with selectable EN/FR subtitles."
+    },
+    {
+      "id": "digital-circus-last-act",
+      "title": "The Amazing Digital Circus: The Last Act",
+      "year": 2026,
+      "releaseName": "The.Amazing.Digital.Circus.The.Last.Act.2026.1080p.WEBRip.x264.AAC-[YTS.BZ]",
+      "poster": "/shows/digital-circus-last-act/poster.jpg",
+      "screenshots": [],
+      "video": "https://limewire.com/d/1I1JO#rpNOsLI9k8",
+      "videoType": "external",
+      "downloadUrl": "https://limewire.com/d/1I1JO#rpNOsLI9k8",
+      "size": "",
+      "videoFormat": "MP4 | 1080p | x264 | WEBRip",
+      "audio": "English | AAC",
+      "quality": "1080p WEBRip",
+      "director": "Gooseworx",
+      "writer": "Gooseworx",
+      "cast": "Lizzie Freeman, Michael Kovach, Amanda Hufford",
+      "synopsis": "Feature-length version of the final two episodes (8 and 9) of The Amazing Digital Circus - the conclusion of the cast trapped in a digital realm under an unstable ringmaster."
+    },
+    {
+      "id": "felix-the-cat-movie",
+      "title": "Felix the Cat: The Movie",
+      "year": 1988,
+      "imdb": "https://www.imdb.com/title/tt0259308/",
+      "director": "Tibor Hernádi",
+      "genre": "Animation, Adventure",
+      "cast": "David Kolin, Chris Phillips, Maureen O'Connell, Peter Newman, Alice Playten, Don Oriolo",
+      "poster": "/shows/felix-the-cat-movie/poster.jpg?v=1",
+      "screenshots": [],
+      "video": "https://limewire.com/d/FfN2d#hJXWpaokDD",
+      "videoType": "external",
+      "downloadUrl": "https://limewire.com/d/FfN2d#hJXWpaokDD",
+      "runtime": "1 h 18 min",
+      "videoFormat": "MPEG-4 | AVC | 1428×1080 | 4:3 | 2 136 kb/s | 25 FPS",
+      "audio": "English | AAC LC | 128 kb/s | 2.0 | 44.1 kHz",
+      "subtitles": "No",
+      "quality": "1080p",
+      "synopsis": "In another dimension, the villainous scientist Duke of Zill, with the help of his mechanical, geometric army, takes over the Land of Oriana, prompting Felix the Cat to save its princess and restore order once again."
+    },
+    {
+      "id": "a-goofy-movie",
+      "title": "A Goofy Movie",
+      "year": 1995,
+      "imdb": "https://www.imdb.com/title/tt0113198/",
+      "director": "Kevin Lima",
+      "genre": "Animation, Adventure, Comedy, Family",
+      "cast": "Bill Farmer, Jason Marsden, Jim Cummings, Kellie Martin, Rob Paulsen, Wallace Shawn",
+      "poster": "/shows/a-goofy-movie/poster.jpg?v=1",
+      "screenshots": [
+        "/shows/a-goofy-movie/1.jpg",
+        "/shows/a-goofy-movie/2.jpg",
+        "/shows/a-goofy-movie/3.jpg"
+      ],
+      "video": "https://limewire.com/d/44pzP#Ut5I2OsR3d",
+      "videoType": "external",
+      "downloadUrl": "https://limewire.com/d/44pzP#Ut5I2OsR3d",
+      "runtime": "1 h 18 min",
+      "quality": "1995",
+      "synopsis": "Goofy and his teenage son Max hit the open road on a cross-country trip - fishing, Bigfoot, and Powerline concert chaos included. It's hard to be cool when your dad is Goofy."
+    },
+    {
+      "id": "michael",
+      "title": "Michael",
+      "year": 2026,
+      "imdb": "https://www.imdb.com/title/tt11378946/",
+      "director": "Antoine Fuqua",
+      "genre": "Biography, Drama, Music",
+      "cast": "Jaafar Jackson, Colman Domingo, Nia Long, Miles Teller, Kendrick Sampson, Juliano Krue Valdi, KeiLyn Durrel Jones",
+      "poster": "/shows/michael/poster.jpg?v=2",
+      "screenshots": [
+        "/shows/michael/1.jpg",
+        "/shows/michael/2.jpg",
+        "/shows/michael/3.jpg"
+      ],
+      "video": "https://limewire.com/d/sITiy#eVCuGZkiII",
+      "videoType": "external",
+      "downloadUrl": "https://limewire.com/d/sITiy#eVCuGZkiII",
+      "runtime": "2 h 7 min",
+      "quality": "2026",
+      "synopsis": "Biographical drama following Michael Jackson from his Jackson 5 days in the 1960s through the Bad World Tour in the late 1980s - his life off-stage and some of the most iconic performances of his early solo career."
+    }
+  ]
+}
