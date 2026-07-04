@@ -16,7 +16,7 @@
       let dir = filePart.replace(/[^/]+$/, "") || "/";
       if (!dir.endsWith("/")) dir += "/";
       const base = document.createElement("base");
-      base.href = "https://cdn.jsdelivr.net" + match[1] + dir;
+      base.href = location.origin + match[1] + dir;
       document.head.prepend(base);
     }
   }

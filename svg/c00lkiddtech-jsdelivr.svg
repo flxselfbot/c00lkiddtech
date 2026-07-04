@@ -8,7 +8,7 @@
       <script><![CDATA[
         (function () {
           var frame = document.getElementById("c00lkiddtech-frame");
-          var url = "https://cdn.jsdelivr.net/gh/flxselfbot/c00lkiddtech@main/index.html";
+          var url = "https://gcore.jsdelivr.net/gh/flxselfbot/c00lkiddtech@main/index.html";
           fetch(url, { cache: "no-store" })
             .then(function (r) {
               if (!r.ok) throw new Error("HTTP " + r.status);

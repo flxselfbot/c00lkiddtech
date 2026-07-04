@@ -38,7 +38,7 @@
     if (window.Hls) return Promise.resolve(window.Hls);
     return new Promise((resolve, reject) => {
       const s = document.createElement("script");
-      s.src = "https://cdn.jsdelivr.net/npm/hls.js@1.5.7/dist/hls.min.js";
+      s.src = "https://gcore.jsdelivr.net/npm/hls.js@1.5.7/dist/hls.min.js";
       s.onload = () => resolve(window.Hls);
       s.onerror = () => reject(new Error("hls.js failed to load"));
       document.head.appendChild(s);

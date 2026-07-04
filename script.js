@@ -478,7 +478,7 @@ function playableUrl(game) {
       return url;
     }
     if (url.includes("bubbls/youtube-playables")) {
-      return url.startsWith("http") ? url : `https://cdn.jsdelivr.net/gh/bubbls/youtube-playables@latest/${game.slug}/index.html`;
+      return url.startsWith("http") ? url : `https://gcore.jsdelivr.net/gh/bubbls/youtube-playables@latest/${game.slug}/index.html`;
     }
   }
   if (url.startsWith("/playables/")) {
