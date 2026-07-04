@@ -1,0 +1,75 @@
+body.legal-page {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #120606 0%, #0d0303 100%);
+  color: #ffe8e8;
+}
+
+html.static-mirror .static-mirror-banner {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  padding: 0.45rem 0.75rem;
+  text-align: center;
+  font-size: 0.82rem;
+  background: #2a1810;
+  color: #ffd4a8;
+  border-bottom: 1px solid #5c3d1e;
+}
+
+html.static-mirror .static-mirror-banner a {
+  color: #ffb347;
+  font-weight: 600;
+}
+
+.legal-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.legal-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #ff7a7a;
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.legal-back:hover {
+  text-decoration: underline;
+}
+
+.legal-wrap h1 {
+  margin: 0 0 8px;
+  font-size: 1.8rem;
+  color: #ffe8e8;
+}
+
+.legal-updated {
+  margin: 0 0 28px;
+  color: #ffb3b3;
+  font-size: 0.88rem;
+}
+
+.legal-wrap h2 {
+  margin: 28px 0 10px;
+  font-size: 1.1rem;
+  color: #ff7a7a;
+}
+
+.legal-wrap p,
+.legal-wrap li {
+  line-height: 1.65;
+  color: #ffe8e8;
+}
+
+.legal-wrap ul {
+  margin: 0 0 14px;
+  padding-left: 1.25rem;
+}
+
+.legal-wrap a {
+  color: #ff7a7a;
+}

@@ -1,361 +1,238 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>c00lkiddtech</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    :root {
-      --accent: #ff1744;
-      --text: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: radial-gradient(circle at 30% 20%, #ff003b, #000 70%);
-      color: var(--text);
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .app {
-      display: flex;
-      height: 100vh;
-    }
-
-    /* SIDEBAR */
-    .sidebar {
-      width: 60px;
-      background: rgba(0, 0, 0, 0.85);
-      padding: 10px 0;
-      border-right: 1px solid rgba(255, 255, 255, 0.2);
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    .sidebar button {
-      width: 100%;
-      padding: 15px 0;
-      font-size: 22px;
-      background: transparent;
-      border: none;
-      color: var(--text);
-      cursor: pointer;
-      border-radius: 12px;
-    }
-
-    .sidebar button:hover {
-      background: rgba(255, 255, 255, 0.15);
-    }
-
-    /* MAIN CONTENT */
-    .content {
-      flex: 1;
-      padding: 20px;
-    }
-
-    .panel {
-      height: 100%;
-      background: rgba(0, 0, 0, 0.55);
-      backdrop-filter: blur(4px);
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 20px;
-      overflow: auto;
-    }
-
-    .page {
-      display: none;
-      min-height: 100%;
-    }
-
-    .page.active {
-      display: block;
-    }
-
-    /* GAME LIST (no icons) */
-    .game-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .game-btn {
-      padding: 12px 18px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      cursor: pointer;
-      font-size: 15px;
-      font-weight: 600;
-      width: fit-content;
-    }
-    
-    .settings-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 15px;
-    }
-    
-    .settings-btn {
-      padding: 12px 18px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      cursor: pointer;
-      font-size: 15px;
-      font-weight: 600;
-      width: fit-content;
-    }
-    
-    .settings-btn:hover {
-      background: rgba(255, 23, 68, 0.3);
-    }
-
-    .game-btn:hover {
-      background: rgba(255, 23, 68, 0.3);
-    }
-
-    /* Game screen (only shown after clicking a game) */
-    #gameScreen {
-      margin-top: 15px;
-      width: 100%;
-      height: 80vh;
-      border-radius: 16px;
-      display: none; /* hidden at first */
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      background: #000;
-    }
-
-    #gameScreen iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    @media (max-width: 800px) {
-      #gameScreen {
-        height: 60vh;
-      }
-    }
+  <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+  <script src="./cloak-types.js"></script>
+  <script>
+    (function () {
+      if (/\bembed=1\b/.test(location.search) || /\bnocloak=1\b/.test(location.search)) return;
+      document.documentElement.className = "is-cloaked";
+      applyNasaSplashCloakToDocument();
+      setTimeout(function () {
+        document.documentElement.classList.remove("is-cloaked", "cloak-revealing");
+        var overlay = document.getElementById("site-cloak");
+        if (overlay) overlay.remove();
+        if (typeof restoreAfterNasaSplash === "function") restoreAfterNasaSplash();
+      }, 4500);
+    })();
+  </script>
+  <style id="cloak-critical">
+    html.is-cloaked, html.is-cloaked body { overflow: hidden !important; margin: 0 !important; background: #0b0b0b !important; }
+    html.is-cloaked body > :not(#site-cloak) { visibility: hidden !important; pointer-events: none !important; }
+    #site-cloak { position: fixed; inset: 0; z-index: 2147483647; }
+    #site-cloak .site-cloak-panel { position: absolute; inset: 0; background: #0b0b0b; }
+    #site-cloak iframe { width: 100%; height: 100%; border: 0; display: block; background: #fff; }
   </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NASA</title>
+  <meta name="description" content="c00lkiddtech — games, links, and tools." />
+  <meta name="theme-color" content="#120606" />
+  <script src="./cloak.js"></script>
+  <script src="./mirror.js"></script>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./shows.css" />
+  <script>
+    window.__IS_CHROMEBOOK__ = /CrOS/i.test(navigator.userAgent || "");
+    if (window.__IS_CHROMEBOOK__) document.documentElement.classList.add("chromebook");
+  </script>
 </head>
-
 <body>
-  <div class="app">
-
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-      <button onclick="showPage('home')">🏠</button>
-      <button onclick="showPage('games')">🎮</button>
-      <button onclick="showPage('partners')">❤️</button>
-      <button onclick="showPage('settings')">⚙️</button>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div class="content">
-      <div class="panel">
-
-        <!-- HOME PAGE -->
-        <section id="page-home" class="page active">
-          <h1>Welcome to <span style="color: var(--accent)">c00lkiddtech</span></h1>
-          <p id="welcomeName">Logged in as Guest</p>
-        </section>
-
-        <!-- GAMES PAGE -->
-        <section id="page-games" class="page">
-          <h1>Games</h1>
-          <p>Click a game to load it inside the window.</p>
-
-          <div class="game-list">
-            <button class="game-btn"
-              onclick="loadGame('https://student-desmos.vercel.app')">
-              Run 3
-            </button>
-
-            <button class="game-btn"
-              onclick="loadGame('https://eaglercraft-orcin.vercel.app')">
-              Eaglercraft
-            </button>
-
-            <button class="game-btn"
-              onclick="loadGame('https://moto-x3m-chi.vercel.app')">
-              Moto X3M
-            </button>
-
-            <button class="game-btn"
-              onclick="loadGame('https://unbrooked-evc4qgtzr-createdreallol.vercel.app/projects/sm64/index.html')">
-              Super Mario 64
-            </button>
-
-            <button class="game-btn"
-              onclick="loadGame('https://script.google.com/macros/s/AKfycbxGM35J29NkO-2LYjxWj_cA9IUaaXypkUy-LqXyLRbGTz0R6lXmAEapz1STN1jlTIRavw/exec')">
-              Cookie Clicker
-            </button>
-
-            <button class="game-btn"
-              onclick="loadGame('https://codehs.com/sandbox/msmemerguy/raider/run')">
-              Kahoot Raider
-            </button>
-
-            <button class="game-btn"
-              onclick="loadGame('https://2048-sr-tech.vercel.app')">
-              2048
-            </button>
-            
-            <button class="game-btn"
-              onclick="loadGame('https://geektyper.com/tegnio')">
-              Geektyper
-            </button>
-            
-            <button class="game-btn"
-              onclick="loadGame('https://slope-inf.vercel.app')">
-              Slope
-            </button>
-            
-            <button class="game-btn"
-              onclick="loadGame('https://deepai.org/chat/gpt-chat')">
-              ChatGPT
-            </button>
-                        
-            <button class="game-btn"
-              onclick="loadGame('https://script.google.com/macros/s/AKfycbydNb9Y8FIM3D0vcweKtYCYbjJcSXghedO6MN0aWbP5qIwamjjSkBDirvuMHR_6sc4/exec')">
-              Geometry Dash Lite
-            </button>
-                                    
-            <button class="game-btn"
-              onclick="loadGame('https://script.google.com/macros/s/AKfycbxJNtrKTWPCSIo9tOqq53G2xqoQCIPDTYUsVOT79Eqk8I7C5cQkGdDnj0jzlNHa7bvs3g/exec')">
-              FNAF 1
-            </button>
-                                    
-            <button class="game-btn"
-              onclick="loadGame('https://script.google.com/macros/s/AKfycbypOitjGD19RPkCYQ8vgJzFfmtMtnl3naBwSw9OhpqtalZs0k3Pri3nL7X76qUwdV9GGQ/exec')">
-              Pokemon Ruby
-            </button>
-                                    
-            <button class="game-btn"
-              onclick="loadGame('https://script.google.com/macros/s/AKfycbzjgnGGeTNL2DTjJzVx3WGvsLjEyA47O6xYss-ijTLWWwrQv9siK9Gn_QqNDlDkrc27/exec')">
-              man face nugget clicker
-            </button>
-                                    
-            <button class="game-btn"
-              onclick="loadGame('https://script.google.com/macros/s/AKfycby30nrhMSPeJyfgpPQfLsVVhOxjjyErkIsQtoYAzPkRYenYcSBpVyMcOwXy_flMCjFm/exec')">
-              Angry Birds
-            </button>
-                                                
-            <button class="game-btn"
-              onclick="loadGame('https://script.google.com/macros/s/AKfycbxN6EVQbtkjn6NUiIyJscLGTyyMyAUABzuB_kp4relIe6rr9B8eWmlnlvDsBVtiRa5pPg/exec')">
-              Papa's Pizzaria
-            </button>
-            
-            <button class="game-btn"
-              onclick="loadGame('https://storage.googleapis.com/test-41376.appspot.com/gn.html')">
-              Granny
-            </button>
-            
-            <button class="game-btn"
-              onclick="loadGame('https://script.google.com/macros/s/AKfycbwYa2ttxpXaZwWYxwlXG9c4DWe7ceyuEHYfK0uB9XKKtAqaAczG0O5VoP3fBXDT6VKB/exec')">
-              Sonic 2 Advanced
-            </button>
-            
-            <button class="game-btn"
-              onclick="loadGame('https://script.google.com/macros/s/AKfycbw_N9kFNCWUZrWJCfCv_Ion7Boqtwv1CEdFsIXMXjFZkbYrBgrp_Lviws13VYRzNnD9/exec')">
-              Brainrot Playground
-            </button>
-            
-            <button class="game-btn"
-              onclick="loadGame('https://script.google.com/macros/s/AKfycbygjC3zfZtvLnkZSdN0ZYEX2u1ZGEKeW6fP2y2SC0cJBvYVq7f_wZGbgbrFaq0iUhcNsA/exec')">
-              Melon Playground from TEMU
-            </button>
-            
-            <button class="game-btn"
-              onclick="loadGame('https://script.google.com/macros/s/AKfycbzwDflD6NVq9iPdEWsRyyI4iqR_k47P-BK4sn_vpYaZGsPJz3zDYRDy45azzYiPnYs/exec')">
-              Bottle Flip 3D
-            </button>
-          </div>
-
-          <!-- Game screen appears only after a game is clicked -->
-          <div id="gameScreen"></div>
-        </section>
-
-        <!-- PARTNERS PAGE -->
-        <section id="page-partners" class="page">
-          <h1>Partners</h1>
-          <p>none yet</p>
-        </section>
-
-        <!-- SETTINGS PAGE -->
-        <section id="page-settings" class="page">
-          <h1>Settings</h1>
-          <p>Choose what you want to change.</p>
-          
-          <div class="settings-list">
-          
-          <button onclick="s1()">open in blank</button>
-          
-          
-          <script>
-          function s1(),{ window.location.href = "about:blank"; }
-          </script>
-          
-          </div>
-        </section>
-
-      </div>
+  <div id="site-cloak" aria-hidden="true">
+    <div class="site-cloak-panel">
+      <iframe src="./cloak/nasa.html" title="NASA" referrerpolicy="no-referrer"></iframe>
     </div>
   </div>
+  <div id="announcement"></div>
 
-  <script>
-    // Switch visible page
-    function showPage(id) {
-      document.querySelectorAll(".page").forEach((p) =>
-        p.classList.remove("active")
-      );
-      document.getElementById("page-" + id).classList.add("active");
-    }
+  <a href="https://fluxer.gg/UkaZTMIb" target="_blank" rel="noopener noreferrer" class="fluxer-btn" id="fluxerBtn" aria-label="Invite">
+    <img src="./fluxer-logo.png" alt="" width="52" height="52" />
+  </a>
 
-    // Load username from Apps Script
-    try {
-      if (google && google.script && google.script.run) {
-        google.script.run
-          .withSuccessHandler(function (name) {
-            document.getElementById("welcomeName").textContent =
-              "Logged in as " + (name || "Guest");
-          })
-          .getUserName();
-      }
-    } catch (e) {
-      // ignore if not in Apps Script or google.script not defined
-    }
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar-legal">
+        <a href="./tos.html">ToS</a>
+        <span class="sidebar-legal-sep" aria-hidden="true">•</span>
+        <a href="./dmca.html">DMCA</a>
+        <span class="sidebar-legal-sep" aria-hidden="true">•</span>
+        <a href="./privacypolicy.html">Privacy Policy</a>
+      </div>
+      <h1 class="logo">c00lkiddtech</h1>
+      <nav class="nav">
+        <button class="nav-btn active" data-tab="home">Home</button>
+        <button class="nav-btn" data-tab="playables">Games</button>
+        <button class="nav-btn" data-tab="game-links">Game Links</button>
+        <button class="nav-btn" data-tab="others">Others</button>
+        <button class="nav-btn" data-tab="link-checker">Link checker</button>
+        <button class="nav-btn" data-tab="shows">Shows/Movies</button>
+        <button class="nav-btn" data-tab="partners">Partners</button>
+        <button class="nav-btn" data-tab="settings">Settings</button>
+        <button class="nav-btn" data-tab="ads">Ads</button>
+      </nav>
+    </aside>
+    <main class="content">
+      <section id="home" class="tab active">
+        <div class="home-wrap" data-period="evening">
+          <div class="home-gradient-orbit" aria-hidden="true">
+            <div class="home-gradient-blob home-gradient-blob-a"></div>
+            <div class="home-gradient-blob home-gradient-blob-b"></div>
+            <div class="home-gradient-blob home-gradient-blob-c"></div>
+          </div>
+          <div class="home-content">
+            <header class="home-hero">
+              <p class="home-kicker">Welcome to c00lkiddtech</p>
+              <p class="home-greeting" id="homeGreeting">Good evening</p>
+              <div class="lg-clock-wrap">
+                <div class="lg-clock-panel">
+                  <div class="lg-clock-noise" aria-hidden="true"></div>
+                  <div class="lg-clock-shine" aria-hidden="true"></div>
+                  <div class="lg-clock-digits" id="homeTime" aria-live="polite"></div>
+                </div>
+                <p class="lg-clock-ampm" id="homeAmPm"></p>
+              </div>
+              <p class="home-date" id="homeDate">Loading date…</p>
+              <p class="home-location" id="homeLocation">Detecting your timezone…</p>
+            </header>
+            <article class="home-about glass-surface">
+              <h2 class="home-about-title">About The Creator</h2>
+              <p class="home-about-teaser">Learn how c00lkiddtech started and who runs the site.</p>
+              <a class="home-about-link" href="https://c00lkiddtech.live/about-the-creator">Read about the creator →</a>
+            </article>
+          </div>
+        </div>
+      </section>
 
-    // Load a game URL into the game screen
-    function loadGame(url) {
-      const screen = document.getElementById("gameScreen");
+      <section id="playables" class="tab">
+        <div class="playables-wrap">
+          <div class="playables-toolbar" id="playablesToolbar">
+            <div class="playables-search-row">
+              <label class="playables-search-box glass-surface" for="playablesSearch">
+                <span class="playables-search-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="M20 20l-3.5-3.5"></path>
+                  </svg>
+                </span>
+                <input type="text" id="playablesSearch" class="playables-search" placeholder="Search games..." autocomplete="off" spellcheck="false" />
+              </label>
+              <div class="playables-category-select-wrap glass-surface">
+                <select id="playablesCategory" class="playables-category-select glass-select" aria-label="Filter by category">
+                  <option value="">All categories</option>
+                </select>
+              </div>
+              <span class="playables-count" id="playablesCount"></span>
+            </div>
+            <div class="playables-categories" id="playablesCategories" aria-label="Game categories"></div>
+          </div>
+          <div class="playables-grid" id="playablesGrid"></div>
+          <div id="playables-player" class="playables-player hidden">
+            <div class="playables-player-bar">
+              <button type="button" id="playables-back" class="playables-back">← Back</button>
+              <span id="playables-title" class="playables-title"></span>
+              <button type="button" id="playables-full" class="jetstream-open">Open ↗</button>
+            </div>
+            <iframe id="playables-frame" class="playables-frame" title="Game" allow="fullscreen; autoplay; gamepad"></iframe>
+          </div>
+        </div>
+      </section>
 
-      // Make screen visible if it's hidden
-      screen.style.display = "block";
+      <div id="linkCheckTabBar" class="link-check-tab-bar hidden">
+        <div class="game-links-toolbar glass-surface">
+          <label class="game-links-check-label">
+            Check from
+            <select id="linkCheckSourceBar" class="glass-select" aria-label="Link check source">
+              <option value="glseries">GLSeries blockers</option>
+              <option value="gnmath">GN-Math blockers</option>
+              <option value="ourLinewize">C00lkidd's Linewize</option>
+            </select>
+          </label>
+          <button type="button" class="cloak-btn" id="checkAllLinks">Check all links</button>
+        </div>
+      </div>
 
-      // Clear previous iframe if any
-      screen.innerHTML = "";
+      <section id="link-checker" class="tab">
+        <div class="link-checker-panel">
+          <div class="link-checker-card glass-surface">
+            <header class="link-checker-head">
+              <h2 class="link-checker-title">Link checker</h2>
+              <p class="link-checker-desc">Uses c00lkiddtech.live API when available.</p>
+            </header>
+            <label class="link-checker-field" for="linkCheckerUrl">
+              <span class="link-checker-label">URL</span>
+              <input type="url" id="linkCheckerUrl" class="link-checker-input glass-select" placeholder="https://example.com" />
+            </label>
+            <div class="link-checker-controls">
+              <select id="linkCheckSource" class="link-checker-select glass-select">
+                <option value="glseries">GLSeries blockers</option>
+                <option value="gnmath">GN-Math blockers</option>
+                <option value="ourLinewize">C00lkidd's Linewize</option>
+              </select>
+              <button type="button" class="link-checker-primary cloak-btn" id="linkCheckerRun">Check</button>
+            </div>
+            <p id="linkCheckerStatus" class="link-check-status"></p>
+          </div>
+        </div>
+      </section>
 
-      // Create iframe
-      const iframe = document.createElement("iframe");
-      iframe.src = url;
-      iframe.allowFullscreen = true;
+      <section id="game-links" class="tab"><div class="grid" id="gamesGrid"></div></section>
+      <section id="others" class="tab"><div class="grid" id="othersGrid"></div></section>
 
-      screen.appendChild(iframe);
-    }
-  </script>
+      <section id="shows" class="tab shows-cinema">
+        <div class="shows-wrap">
+          <header class="shows-header">
+            <div>
+              <h2 class="shows-brand">C00LFLIX</h2>
+              <span class="shows-tagline">Shows &amp; Movies</span>
+            </div>
+            <button type="button" class="shows-back" id="showsBack">← Back to browse</button>
+          </header>
+          <div id="showsCatalog" class="shows-catalog"></div>
+          <div id="showsDetail" class="shows-detail"></div>
+        </div>
+      </section>
+
+      <section id="partners" class="tab"><div class="grid" id="partnersGrid"></div></section>
+
+      <section id="settings" class="tab">
+        <div class="settings-panel">
+          <div class="settings-card">
+            <div class="settings-card-title">Background Color</div>
+            <div class="settings-card-desc">Customize the page background color</div>
+            <div class="bg-color-row">
+              <input type="color" id="bgColorPicker" value="#120606" class="color-picker" aria-label="Background color" />
+              <button type="button" class="cloak-btn" id="bgColorDefaultBtn">Default</button>
+            </div>
+          </div>
+          <div class="settings-card settings-card-wide">
+            <div class="settings-card-title">CloakX</div>
+            <div class="settings-card-desc">Tab cloaking for games and links</div>
+            <div class="cloakx-methods" id="cloakxMethods" aria-label="CloakX methods"></div>
+            <label class="cloakx-url-label cloakx-inurl-label" for="cloakxInurlType">
+              inurl Cloak Types
+              <div class="cloakx-inurl-row">
+                <select id="cloakxInurlType" class="glass-select cloakx-inurl-select"></select>
+                <button type="button" class="cloak-btn" id="cloakxInurlSave">Save</button>
+              </div>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section id="ads" class="tab">
+        <div class="ads-embed jetstream-embed">
+          <div class="jetstream-banner ads-banner">
+            <div><strong>ads :0</strong></div>
+            <button type="button" class="jetstream-open" id="adsOpenBtn">Open full screen ↗</button>
+          </div>
+          <iframe id="ads-frame" class="browser-frame" data-src="./ads.html" title="ads :0"></iframe>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./shows.js"></script>
+  <script src="./home.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
